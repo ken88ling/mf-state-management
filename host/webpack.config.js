@@ -46,7 +46,9 @@ module.exports = {
       remotes: {
         nav: 'nav@http://localhost:3001/remoteEntry.js',
       },
-      exposes: {},
+      exposes: {
+        './store': './src/store',
+      },
       shared: {
         ...deps,
         react: {
