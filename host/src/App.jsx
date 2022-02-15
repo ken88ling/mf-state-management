@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import Header from 'nav/Header';
 
 import './index.css';
+import { CountProvider, useCount } from './store';
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useCount(0);
 
   return (
     <div className='container'>
@@ -18,4 +19,9 @@ const App = () => {
     </div>
   );
 };
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <CountProvider>
+    <App />
+  </CountProvider>,
+  document.getElementById('app')
+);
