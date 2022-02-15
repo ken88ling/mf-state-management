@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from 'nav/Header';
 
 import './index.css';
-import { CountProvider, useCount } from './store';
+import { CountProvider, useCount } from 'host/store';
 
 const App = () => {
   const [count, setCount] = useCount(0);
