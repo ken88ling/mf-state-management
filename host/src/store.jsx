@@ -1,15 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import create from 'zustand';
 
-const CountContext = createContext([0, () => {}]);
+const useStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  clear: () => set(() => ({ count: 0 })),
+}));
 
-export function CountProvider({ children }) {
-  return (
-    <CountContext.Provider value={useState(0)}>
-      {children}
-    </CountContext.Provider>
-  );
-}
-
-export function useCount() {
-  return useContext(CountContext);
-}
+export default useStore;
