@@ -1,7 +1,13 @@
 import React from 'react';
 
-function Header(props) {
-  return <div style={{ border: '1px solid black' }}>Header 1</div>;
+function Header({ count, onClear }) {
+  return (
+    <div style={{ border: '1px solid black' }}>
+      Header
+      <div>{count}</div>
+      <button onClick={onClear}>Clear</button>
+    </div>
+  );
 }
 
 export default Header;
